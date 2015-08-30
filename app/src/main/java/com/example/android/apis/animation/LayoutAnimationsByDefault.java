@@ -53,7 +53,7 @@ public class LayoutAnimationsByDefault extends Activity {
                         gridContainer.removeView(v);
                     }
                 });
-                gridContainer.addView(newButton, Math.min(1, gridContainer.getChildCount()));
+                gridContainer.addView(newButton, Math.min(1, gridContainer.getChildCount()));   //gridContainer.getChildCount()是获取当前的子组件的数量。
             }
         });
     }

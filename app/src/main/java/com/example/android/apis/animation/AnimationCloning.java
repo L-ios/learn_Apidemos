@@ -67,7 +67,7 @@ public class AnimationCloning extends Activity {
         public MyAnimationView(Context context) {
             super(context);
 
-            mDensity = getContext().getResources().getDisplayMetrics().density;
+            mDensity = getContext().getResources().getDisplayMetrics().density; //获取屏幕密度
 
             ShapeHolder ball0 = addBall(50f, 25f);
             ShapeHolder ball1 = addBall(150f, 25f);

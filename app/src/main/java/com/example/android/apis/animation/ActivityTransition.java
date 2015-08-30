@@ -23,6 +23,7 @@ import android.app.SharedElementCallback;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -108,18 +109,19 @@ public class ActivityTransition extends Activity {
                 @Override
                 public void onMapSharedElements(List<String> names,
                         Map<String, View> sharedElements) {
+                    Log.d("lingyang", Log.getStackTraceString(new Exception("SharedElementCallback")));
                     sharedElements.put("hero", mHero);
                 }
             });
         }
     }
 
-    public void clicked(View v) {
+    public void clicked(View v) {   //在image_block中注册为点击函数
         mHero = (ImageView) v;
         Intent intent = new Intent(this, ActivityTransitionDetails.class);
         intent.putExtra(KEY_ID, v.getTransitionName());
         ActivityOptions activityOptions
-                = ActivityOptions.makeSceneTransitionAnimation(this, mHero, "hero");
+                = ActivityOptions.makeSceneTransitionAnimation(this, mHero, "hero");    //这里调用了系统的函数，采用系统动画
         startActivity(intent, activityOptions.toBundle());
     }
 

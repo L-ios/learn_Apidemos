@@ -85,7 +85,7 @@ public class BouncingBalls extends Activity {
 
             // Bouncing animation with squash and stretch
             float startY = newBall.getY();
-            float endY = getHeight() - 50f;
+            float endY = getHeight() - 50f;     //小球的高度是50f
             float h = (float)getHeight();
             float eventY = event.getY();
             int duration = (int)(500 * ((h - eventY)/h));
